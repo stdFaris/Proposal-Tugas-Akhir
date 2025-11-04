@@ -69,7 +69,7 @@ Kebutuhan nonfungsional berfokus pada aspek kualitas dan kinerja sistem yang aka
 		\hline
 		NFR04 & \textit{Performance} & Sistem harus mampu melakukan ekstraksi tabel dengan akurasi minimal 80\% untuk tabel dengan struktur yang jelas \\ 
 		\hline
-		NFR05 & \textit{Reliability} & Jika gambar input tidak dapat diproses dengan akurat, sistem harus menampilkan pesan peringatan atau kesalahan yang informatif \\ 
+		NFR05 & \textit{Reliability} & Jika gambar input tidak dapat diproses dengan akurat, sistem harus menampilkan pesan peringatan yang informatif \\ 
 		\hline
 		NFR06 & \textit{Security} & Sistem harus melakukan validasi tipe dan ukuran file sebelum proses unggah untuk mencegah masuknya file berbahaya \\ 
 		\hline
@@ -100,7 +100,7 @@ Tahap akhir adalah penyusunan ulang. Sistem menggunakan koordinat setiap kotak p
 \subsubsection{PaddleOCR}
 PaddleOCR menyediakan alur kerja lengkap yang secara otomatis menangani seluruh proses, mulai dari deteksi teks, pembacaan isi, hingga pemahaman struktur dokumen. Dalam konteks konversi dokumen fisik ke digital dengan tata letak yang sama, komponen PP-Structure menjadi bagian yang paling penting.
 
-Langkah awal dilakukan dengan deteksi teks menggunakan model seperti DBNet atau EAST, yang berfungsi mendeteksi lokasi teks di dalam gambar. Model ini bekerja dengan memprediksi area yang memiliki kemungkinan mengandung teks, kemudian menghasilkan kotak pembatas poligonal yang melingkupi setiap baris atau area teks. Area non-teks seperti tabel dan gambar akan memiliki pola berbeda dan dapat dipisahkan melalui modul analisis tata letak bawaan.
+Langkah awal dilakukan dengan deteksi teks menggunakan model seperti DBNet yang berfungsi mendeteksi lokasi teks di dalam gambar. Model ini bekerja dengan memprediksi area yang memiliki kemungkinan mengandung teks, kemudian menghasilkan kotak pembatas poligonal yang melingkupi setiap baris atau area teks. Area non-teks seperti tabel dan gambar akan memiliki pola berbeda dan dapat dipisahkan melalui modul analisis tata letak bawaan.
 
 Setelah area teks ditemukan, sistem melakukan pengenalan teks dengan model CRNN untuk membaca isi teksnya per baris. Sementara itu, modul khusus untuk pengenalan tabel mendeteksi pola garis horizontal dan vertikal pada area tabel. PP-Structure mampu mengonversi hasil tersebut langsung menjadi format tabel digital dengan isi setiap sel diisi berdasarkan posisi teks yang terbaca. Untuk gambar, sistem menyimpannya sebagai area media dengan posisi tetap.
 
@@ -120,7 +120,7 @@ Dalam tahap rekonstruksi halaman, setiap elemen digital yang telah dihasilkan ak
 Untuk memperoleh alternatif solusi yang paling sesuai untuk dikembangkan, langkah evaluasi awal adalah melakukan analisis kualitatif. Analisis ini difokuskan untuk mengidentifikasi kelebihan dan kekurangan dari setiap alternatif solusi yang diajukan.
 
 
-Proses identifikasi ini penting karena berfungsi sebagai landasan pertimbangan yang berimbang. Dengan memetakan kedua sisi dari setiap opsi, potensi manfaat yang ditawarkan oleh keunggulan solusi dapat dimaksimalkan, sekaligus potensi risiko yang mungkin timbul dari kekurangannya dapat diminimalkan atau dimitigasi. Pemaparan rinci mengenai perbandingan kelebihan dan kekurangan dari seluruh alternatif solusi disajikan pada Tabel III.3 berikut.
+Proses identifikasi ini penting karena berfungsi sebagai landasan pertimbangan yang berimbang. Dengan memetakan kedua sisi dari setiap opsi, potensi manfaat yang ditawarkan oleh keunggulan solusi dapat dimaksimalkan, sekaligus potensi risiko yang mungkin timbul dari kekurangannya dapat diminimalkan. Pemaparan rinci mengenai perbandingan kelebihan dan kekurangan dari seluruh alternatif solusi disajikan pada Tabel III.3 berikut.
 
 \setcounter{table}{2}
 \begin{center}
@@ -146,12 +146,12 @@ Proses identifikasi ini penting karena berfungsi sebagai landasan pertimbangan y
 		
 		Kombinasi YOLO, CRNN, dan \textit{Post-processing} &
 		\begin{enumerate}
-			\item Setiap bagian bisa diatur atau diganti secara terpisah untuk hasil terbaik
+			\item Setiap bagian bisa diatur secara terpisah untuk hasil terbaik
 			\item Sangat baik dalam menentukan lokasi presisi untuk setiap elemen seperti teks, tabel, dan gambar
 		\end{enumerate} &
 		\begin{enumerate}
 			\item Tidak ada sistem yang menyatukan semuanya. Perlu usaha besar untuk membuat deteksi, pengenalan, dan perbaikan tata letak bekerja bersamaan
-			\item Perlu membuat algoritma tambahan dari nol untuk mendeteksi struktur tabel, terutama untuk tabel yang rumit atau tanpa garis
+			\item Perlu membuat algoritma tambahan dari nol untuk mendeteksi struktur tabel, terutama untuk tabel yang rumit dan tanpa garis
 		\end{enumerate} \\
 		\hline
 		
@@ -162,7 +162,7 @@ Proses identifikasi ini penting karena berfungsi sebagai landasan pertimbangan y
 		\end{enumerate} &
 		\begin{enumerate}
 			\item Sulit mengubah perilaku internal bila perlu penyesuaian detail
-			\item Hasil spasi atau pindah baris masih memerlukan perbaikan manual
+			\item Hasil spasi dan pindah baris masih memerlukan perbaikan manual
 		\end{enumerate} \\
 		\hline
 		
@@ -192,7 +192,7 @@ Dalam metode WSM, setiap kriteria akan diberikan bobot persentase yang menyataka
 	\par Kriteria ini meninjau aspek teknis dan ketersediaan sumber daya, seperti estimasi waktu, biaya, dan kompleksitas integrasi. Kriteria ini penting untuk menentukan kelayakan dan kecepatan penyelesaian, sehingga diberikan bobot tiga puluh persen.
 	
 	\item Skalabilitas (Bobot 20\%) 
-	\par Kriteria ini mengukur kemampuan sistem untuk berkembang di masa depan, seperti menangani volume data yang lebih besar atau kebutuhan kustomisasi baru. Ini adalah pertimbangan jangka panjang yang diberi bobot dua puluh persen.
+	\par Kriteria ini mengukur kemampuan sistem untuk berkembang di masa depan, seperti menangani volume data yang lebih besar dan kebutuhan kustomisasi baru. Ini adalah pertimbangan jangka panjang yang diberi bobot dua puluh persen.
 \end{enumerate}
 
 Penerapan proses penilaian yang telah dijabarkan, yaitu pemberian skor performa pada setiap alternatif dan kalkulasinya terhadap bobot kriteria yang telah ditetapkan, telah selesai dilakukan. Hasil perhitungan kuantitatif menggunakan metode WSM ini disajikan secara rinci pada Tabel III.4.
@@ -225,10 +225,10 @@ Penerapan proses penilaian yang telah dijabarkan, yaitu pemberian skor performa 
 Pada kriteria efektivitas, kombinasi YOLO, CRNN, dan \textit{Post-processing} dan kombinasi EasyOCR dan Layout Parser sama-sama menerima skor 5. Penilaian ini didasarkan pada fakta bahwa keduanya adalah pendekatan yang bisa disesuaikan sehingga hasilnya bisa dibuat semirip mungkin. kombinasi YOLO, CRNN, dan \textit{Post-processing} sangat unggul dalam presisi koordinat bounding box, sementara kombinasi EasyOCR dan Layout Parser unggul dalam pemahaman struktur dan klasifikasi elemen tata letak, sehingga keduanya dinilai menawarkan tingkat akurasi tertinggi. Di sisi lain, PaddleOCR memperoleh skor 4. Meskipun sangat fungsional dan memiliki kemampuan pengenalan tabel bawaan, akurasi presisi tata letaknya secara umum, seperti penanganan spasi dan perpindahan baris masih kurang.
 
 
-Selanjutnya, pada kriteria \textit{implementability}, perbedaannya menjadi sangat jauh dan menjadi faktor penentu. PaddleOCR menerima skor 5. Alasan utamanya karena PaddleOCR merupakan sebuah solusi terpadu atau \textit{all-in-one}. Sistem ini menyediakan \textit{pipeline} yang sudah terintegrasi penuh, mulai dari deteksi hingga pengenalan tabel, sehingga secara drastis mengurangi waktu dan kompleksitas pengembangan. Sebaliknya, kombinasi YOLO, CRNN, dan \textit{Post-processing} dan kombinasi EasyOCR dan Layout Parser keduanya menerima skor terendah 1. Kedua pendekatan ini mewakili tingkat kompleksitas implementasi yang sangat tinggi, kombinasi YOLO, CRNN, dan \textit{Post-processing} menuntut pembangunan \textit{pipeline} manual dari nol dan kombinasi EasyOCR dan Layout Parser memerlukan usaha integrasi untuk menggabungkan dua sistem terpisah.
+Selanjutnya, pada kriteria \textit{implementability}, perbedaannya menjadi sangat jauh dan menjadi faktor penentu. PaddleOCR menerima skor 5. Alasan utamanya karena PaddleOCR merupakan sebuah solusi \textit{all-in-one}. Sistem ini menyediakan \textit{pipeline} yang sudah terintegrasi penuh, mulai dari deteksi hingga pengenalan tabel, sehingga secara drastis mengurangi waktu dan kompleksitas pengembangan. Sebaliknya, kombinasi YOLO, CRNN, dan \textit{Post-processing} dan kombinasi EasyOCR dan Layout Parser keduanya menerima skor terendah 1. Kedua pendekatan ini mewakili tingkat kompleksitas implementasi yang sangat tinggi, kombinasi YOLO, CRNN, dan \textit{Post-processing} menuntut pembangunan \textit{pipeline} manual dari nol dan kombinasi EasyOCR dan Layout Parser memerlukan usaha integrasi untuk menggabungkan dua sistem terpisah.
 
 
-Terakhir, pada kriteria skalabilitas yang berfokus pada jangka panjang, situasinya kembali berbalik. kombinasi YOLO, CRNN, dan \textit{Post-processing} dan kombinasi EasyOCR dan Layout Parser keduanya menerima skor 5. Keunggulan utama keduanya terletak pada sifatnya yang modular, yang memungkinkan setiap komponen diganti atau disesuaikan secara independen di masa depan. Di sisi lain, PaddleOCR menerima skor rendah 2. Sifatnya yang sudah terintegrasi erat justru menjadi kelemahan di sini, membuatnya kaku dan sulit untuk dikustomisasi, yang berpotensi menjadi hambatan jika diperlukan modifikasi spesifik di kemudian hari.
+Terakhir, pada kriteria skalabilitas yang berfokus pada jangka panjang, situasinya kembali berbalik. kombinasi YOLO, CRNN, dan \textit{Post-processing} dan kombinasi EasyOCR dan Layout Parser keduanya menerima skor 5. Keunggulan utama keduanya terletak pada sifatnya yang modular, yang memungkinkan setiap komponen disesuaikan secara independen di masa depan. Di sisi lain, PaddleOCR menerima skor rendah 2. Sifatnya yang sudah terintegrasi erat justru menjadi kelemahan di sini, membuatnya kaku dan sulit untuk dikustomisasi, yang berpotensi menjadi hambatan jika diperlukan modifikasi spesifik di kemudian hari.
 
 
 Berdasarkan analisis kualitatif kelebihan dan kekurangan pada Tabel III.3, serta didukung oleh hasil perhitungan kuantitatif metode WSM pada Tabel III.4, maka PaddleOCR ditetapkan sebagai solusi terpilih. PaddleOCR unggul secara signifikan karena menawarkan keseimbangan terbaik antara fungsionalitas dan kelayakan implementasi. Kelebihannya sebagai solusi \textit{all-in-one} yang siap pakai, lengkap dengan kemampuan pengenalan tabel bawaan, memberikan nilai tertinggi pada kriteria \textit{implementability}. Hal ini menjadikannya pilihan yang paling optimal untuk dikembangkan dibandingkan alternatif solusi lainnya yang membutuhkan usaha integrasi dan pengembangan manual yang jauh lebih kompleks.
