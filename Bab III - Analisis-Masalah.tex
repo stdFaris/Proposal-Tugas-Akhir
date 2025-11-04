@@ -1,0 +1,234 @@
+% ============================================================================================
+% BAB III ANALISIS MASALAH
+% Pembagian subbab tidak rigid dan dapat bervariasi. Bab ini minimal berisi analisis kebutuhan
+% fungsional dan nonfungsional, analisis berbagai alternatif solusi yang dapat ditawarkan, dan
+% metode pemilihan solusi yang diusulkan.
+% ============================================================================================
+\chapter{ANALISIS MASALAH}
+\label{chap:analisis-masalah}
+\section{Analisis Kondisi Saat Ini}
+Transformasi digital merupakan hal yang penting bagi berbagai organisasi untuk meningkatkan efisiensi dalam penyimpanan, pemrosesan, dan penyaluran informasi \autocite{ma2025dociqbenchmarkdatasetfeature}. Organisasi yang melaksanakan digitalisasi dokumen fisik umumnya melakukan proses pemindaian, yaitu konversi dokumen fisik menjadi representasi gambar digital yang biasanya disimpan dalam format PDF, JPEG, atau TIFF. Melalui proses ini, dokumen yang sebelumnya hanya dapat diakses secara manual kini dapat disimpan dan diarsipkan dalam bentuk digital, sehingga lebih mudah diakses serta dapat mengurangi risiko kerusakan.
+
+Meskipun pemindaian berhasil mengubah dokumen dari bentuk fisik menjadi digital untuk tujuan pengarsipan, hasilnya masih berupa gambar semata. Output dari pemindaian standar bersifat \textit{non-machine-readable} \autocite{Dias_2023}. Artinya, sistem hanya mengenali berkas hasil pemindaian sebagai kumpulan piksel tanpa memahami isi maupun struktur teks yang terkandung di dalamnya. Kondisi ini menimbulkan berbagai keterbatasan, seperti sulitnya melakukan pencarian teks, ekstraksi data, dan pengeditan. Oleh karena itu, tantangan utama dalam transformasi digital dokumen bukan hanya terletak pada perubahan format, tetapi juga pada bagaimana hasil digitalisasi tersebut dapat dimanfaatkan secara optimal sesuai dengan kebutuhan pengguna.
+
+\section{Analisis Kebutuhan}
+Berdasarkan hasil analisis kondisi saat ini yang disajikan pada Subbab III.1, diketahui bahwa proses digitalisasi yang dilakukan melalui pemindaian masih memiliki sejumlah keterbatasan, terutama dalam hal pemanfaatan hasil digitalisasi secara optimal. Oleh karena itu, diperlukan penerapan digitalisasi dengan pendekatan yang lebih efektif melalui pengembangan sistem yang menawarkan fitur lebih beragam guna mendukung pengelolaan data digital dan mempermudah pengguna dalam menjalankan aktivitasnya.
+
+\subsection{Identifikasi Masalah Pengguna}
+Keterbatasan dari dokumen pindaian yang bersifat \textit{non-machine-readable} secara langsung berdampak pada alur kerja pengguna. Berikut adalah identifikasi masalah utama yang dihadapi:
+\begin{enumerate}
+	\item Tidak efisien dalam pencarian informasi spesifik 
+	\par Pengguna tidak dapat menemukan informasi di dalam dokumen hasil pemindaian. Ketika diperlukan pencarian data spesifik, fungsi pencarian seperti Ctrl+F tidak dapat digunakan. Akibatnya, pengguna harus membaca dokumen hasil pemindaian secara manual, halaman demi halaman. Proses tersebut terbukti memakan waktu, tidak efisien, dan berpotensi menimbulkan kesalahan manusia.
+	
+	\item Keterbatasan aksesibilitas 
+	\par Keterbatasan aksesibilitas juga menjadi permasalahan penting. Dokumen yang hanya berupa gambar tidak dapat dipahami oleh teknologi bantu seperti pembaca layar, sehingga pengguna dengan keterbatasan penglihatan tidak dapat mengakses informasi di dalamnya. Hal ini menimbulkan hambatan digital serta menciptakan lingkungan kerja yang kurang mendukung bagi semua pengguna.
+	
+	\item Keterbatasan integrasi dokumen hasil pemindaian 
+	\par Data yang masih berformat gambar tidak dapat diekstraksi secara otomatis untuk diolah atau digunakan kembali dalam sistem lain. Kondisi ini membatasi organisasi dalam mengotomatisasi proses kerja yang berkaitan dengan pengelolaan dokumen. Akibatnya, informasi penting dari hasil pemindaian dokumen fisik tidak dapat dimanfaatkan secara optimal untuk mendukung kegiatan organisasi, terutama yang berkaitan dengan otomatisasi alur kerja.
+\end{enumerate}
+
+\subsection{Kebutuhan Fungsional}
+Keterbatasan dari dokumen pindaian yang bersifat \textit{non-machine-readable} secara langsung berdampak pada alur kerja pengguna. Permasalahan yang telah diidentifikasi pada bagian III.2.1 perlu diselesaikan melalui pengembangan sistem baru dengan berbagai kemampuan fungsional. Kebutuhan fungsional tersebut menjelaskan fitur yang harus dimiliki sistem agar mampu mengatasi kendala tersebut dan mendukung otomatisasi proses kerja secara lebih efektif. Rincian kebutuhan fungsional sistem disajikan pada Tabel III.1.
+
+\begin{table}[H]
+	\centering
+	\caption{Daftar Kebutuhan Fungsional Sistem}
+	\label{tbl:Daftar_Kebutuhan_Fungsional}
+	\vspace{-10pt}
+	\begin{tabularx}{\textwidth}{|p{1.5cm}|X|}
+		\hline
+		\textbf{Kode} & \textbf{Kebutuhan Fungsional} \\ 
+		\hline
+		FR01 & Hasil digitalisasi dokumen harus disimpan dalam format yang dapat diedit dan dicari, seperti DOCX \\ 
+		\hline
+		FR02 & Tata letak dokumen digital yang dihasilkan harus menyerupai dokumen fisik aslinya \\ 
+		\hline
+		FR03 & Elemen dalam dokumen digital yang dihasilkan, seperti teks, tabel, dan gambar, harus dapat dipilih, disalin, serta dipindahkan ke aplikasi lain \\ 
+		\hline
+	\end{tabularx}
+\end{table}
+
+\subsection{Kebutuhan Nonfungsional}
+Kebutuhan nonfungsional berfokus pada aspek kualitas dan kinerja sistem yang akan dikembangkan. Aspek ini tidak secara langsung menggambarkan fungsi utama sistem, tetapi sangat berpengaruh terhadap keandalan, efisiensi, serta pengalaman pengguna dalam pengoperasian sistem. Rincian kebutuhan nonfungsional sistem disajikan pada Tabel III.2.
+
+\setcounter{table}{1}
+\begin{table}[H]
+	\centering
+	\caption{Daftar Kebutuhan Nonfungsional Sistem}
+	\label{tbl:Daftar_Kebutuhan_Nonfungsional}
+	\vspace{-10pt}
+	\begin{tabularx}{\textwidth}{|p{1.5cm}|p{2.5cm}|X|}
+		\hline
+		\textbf{Kode} & \textbf{Parameter} & \textbf{Kebutuhan Nonfungsional} \\ 
+		\hline
+		NFR01 & \textit{Accuracy} & Tingkat akurasi penentuan elemen harus mencapai minimal 90\% untuk dokumen dengan kualitas baik dan teks yang jelas \\ 
+		\hline
+		NFR02 & \textit{Compatibility} & Sistem harus mendukung format input berkas gambar, yaitu PDF, JPEG, PNG, dan TIFF \\ 
+		\hline
+		NFR03 & \textit{Performance} & Sistem harus mampu memproses dokumen dengan waktu respons maksimal 1 menit per halaman \\ 
+		\hline
+		NFR04 & \textit{Performance} & Sistem harus mampu melakukan ekstraksi tabel dengan akurasi minimal 80\% untuk tabel dengan struktur yang jelas \\ 
+		\hline
+		NFR05 & \textit{Reliability} & Jika gambar input tidak dapat diproses dengan akurat, sistem harus menampilkan pesan peringatan atau kesalahan yang informatif \\ 
+		\hline
+		NFR06 & \textit{Security} & Sistem harus melakukan validasi tipe dan ukuran file sebelum proses unggah untuk mencegah masuknya file berbahaya \\ 
+		\hline
+		NFR07 & \textit{Usability} & Antarmuka sistem harus intuitif sehingga pengguna dapat mengunggah dan memproses dokumen maksimal dalam tiga langkah \\ 
+		\hline
+		NFR08 & \textit{Usability} & Sistem harus memberikan indikator visual yang jelas selama proses digitalisasi, agar pengguna mengetahui status pemrosesan \\ 
+		\hline
+	\end{tabularx}
+\end{table}
+
+
+
+\section{Analisis Pemilihan Solusi}
+\subsection{Alternatif Solusi}
+Beberapa pendekatan OCR berbasis \textit{deep learning} dapat diterapkan dalam digitalisasi dokumen fisik agar dokumen digital yang dihasilkan dapat diedit sekaligus mempertahankan tata letak aslinya. Berbeda dengan OCR konvensional yang hanya mampu mengenali karakter tanpa memahami konteks dan struktur dokumen, pendekatan OCR berbasis \textit{deep learning} yang bisa dibuat mampu memahami konteks dan struktur dokumen. Teknologi ini menggabungkan kemampuan \textit{text recognition} dengan pemahaman tata letak dokumen, sehingga dapat mengidentifikasi berbagai elemen seperti text, tabel, dan gambar dengan akurat. Pendekatan-pendekatan ini menjadi solusi yang efektif bagi permasalahan digitalisasi dokumen yang kompleks, dengan penjelasan rinci sebagai berikut.
+
+
+\subsubsection{Kombinasi YOLO, CRNN, dan \textit{Post-processing}}
+Model \textit{You Only Look Once} (YOLO) digunakan untuk melakukan deteksi objek pada tingkat halaman. Dalam konteks ini, objek berarti berbagai area seperti area teks, tabel, atau gambar. YOLO membagi gambar ke dalam kisi-kisi. Kemudian, untuk setiap sel kisi, model memprediksi keberadaan elemen tertentu di dalamnya. Hasilnya adalah serangkaian kotak pembatas. Masing-masing kotak ini memiliki koordinat yang terdiri dari nilai x, y, lebar, dan tinggi yang menunjukkan letak setiap elemen di halaman. Proses ini memungkinkan sistem mengetahui batas yang tepat untuk tiap elemen dokumen.
+
+Setelah mendapatkan koordinat, sistem akan memotong setiap elemen menjadi citra-citra terpisah. Setiap potongan citra ini kemudian diproses lebih lanjut sesuai jenisnya. Sebagai contoh, citra area teks akan diolah menggunakan model \textit{Convolutional Recurrent Neural Network} (CRNN) yang berfungsi mengenali teks per baris. Model ini bekerja dengan membaca citra teks secara sekuensial, mengekstrak fitur spasial melalui lapisan konvolusi, lalu menerjemahkannya menjadi rangkaian karakter menggunakan lapisan rekuren dan dekoder.
+
+Untuk area tabel, sistem melakukan analisis struktur garis di dalam area hasil pemotongan. Pola horizontal dan vertikal yang berpotongan dikenali menggunakan deteksi tepi untuk menemukan batas sel. Informasi ini digunakan untuk membangun ulang tabel secara digital dengan struktur baris dan kolom yang sama. Area gambar, sebaliknya, hanya disalin langsung tanpa diubah.
+
+Tahap akhir adalah penyusunan ulang. Sistem menggunakan koordinat setiap kotak pembatas hasil deteksi awal untuk menempatkan kembali teks, tabel, dan gambar ke posisi yang sama di halaman digital. Dengan begitu, hasil akhirnya mempertahankan tata letak asli dokumen fisik.
+
+
+\subsubsection{PaddleOCR}
+PaddleOCR menyediakan alur kerja lengkap yang secara otomatis menangani seluruh proses, mulai dari deteksi teks, pembacaan isi, hingga pemahaman struktur dokumen. Dalam konteks konversi dokumen fisik ke digital dengan tata letak yang sama, komponen PP-Structure menjadi bagian yang paling penting.
+
+Langkah awal dilakukan dengan deteksi teks menggunakan model seperti DBNet atau EAST, yang berfungsi mendeteksi lokasi teks di dalam gambar. Model ini bekerja dengan memprediksi area yang memiliki kemungkinan mengandung teks, kemudian menghasilkan kotak pembatas poligonal yang melingkupi setiap baris atau area teks. Area non-teks seperti tabel dan gambar akan memiliki pola berbeda dan dapat dipisahkan melalui modul analisis tata letak bawaan.
+
+Setelah area teks ditemukan, sistem melakukan pengenalan teks dengan model CRNN untuk membaca isi teksnya per baris. Sementara itu, modul khusus untuk pengenalan tabel mendeteksi pola garis horizontal dan vertikal pada area tabel. PP-Structure mampu mengonversi hasil tersebut langsung menjadi format tabel digital dengan isi setiap sel diisi berdasarkan posisi teks yang terbaca. Untuk gambar, sistem menyimpannya sebagai area media dengan posisi tetap.
+
+Tahap berikutnya adalah pemulihan tata letak, yaitu proses menyusun ulang semua elemen, termasuk teks, tabel, dan gambar, berdasarkan koordinat asli yang tersimpan selama deteksi awal. PaddleOCR menyimpan koordinat dalam satuan piksel relatif terhadap ukuran halaman, sehingga hasil digital dapat dibangun ulang secara proporsional. Dengan pendekatan ini, posisi setiap area teks, tabel, dan gambar di dokumen digital akan identik dengan posisi pada dokumen fisik aslinya.
+
+\subsubsection{Kombinasi EasyOCR dan Layout Parser}
+Pendekatan ini mengombinasikan EasyOCR untuk membaca teks dengan Layout Parser untuk memahami struktur tata letak dokumen. Proses dimulai dengan menerapkan Layout Parser untuk melakukan analisis visual halaman. Layout Parser bekerja menggunakan model deteksi seperti Detectron2 yang telah dilatih untuk mengenali berbagai jenis elemen dokumen, misalnya teks, tabel, dan gambar.
+
+Ketika dijalankan, Layout Parser menghasilkan kumpulan kotak pembatas untuk setiap elemen beserta label jenisnya. Sistem kemudian memotong setiap area berdasarkan koordinat tersebut. Area teks selanjutnya dikirim ke EasyOCR untuk proses pengenalan. Dalam proses ini, sistem membaca huruf demi huruf dan mengubahnya menjadi teks digital yang dapat disunting.
+
+Untuk area tabel, sistem menggunakan pendekatan dua tahap. Layout Parser pertama-tama mengenali bahwa area tersebut adalah tabel. Setelah itu, dilakukan analisis garis dan kisi menggunakan metode deteksi tepi serta analisis jarak antarsegmen untuk menemukan struktur baris dan kolom. Hasilnya diubah menjadi tabel digital dengan ukuran sel yang disesuaikan berdasarkan jarak fisik antarbaris dan kolom pada gambar asli. Sementara itu, gambar hanya disalin sebagai elemen dengan posisi tetap.
+
+Dalam tahap rekonstruksi halaman, setiap elemen digital yang telah dihasilkan akan ditempatkan kembali dengan mengacu pada koordinat awal kotak pembatas. Layout Parser memfasilitasi proses ini dengan menyediakan format posisi. Fitur ini memungkinkan sistem membangun ulang halaman digital yang mempertahankan seluruh tata letak aslinya. Dengan demikian, teks, tabel, dan gambar muncul di posisi yang sama seperti pada dokumen fisik.
+
+
+\subsection{Analisis Penentuan Solusi}
+Untuk memperoleh alternatif solusi yang paling sesuai untuk dikembangkan, langkah evaluasi awal adalah melakukan analisis kualitatif. Analisis ini difokuskan untuk mengidentifikasi kelebihan dan kekurangan dari setiap alternatif solusi yang diajukan.
+
+
+Proses identifikasi ini penting karena berfungsi sebagai landasan pertimbangan yang berimbang. Dengan memetakan kedua sisi dari setiap opsi, potensi manfaat yang ditawarkan oleh keunggulan solusi dapat dimaksimalkan, sekaligus potensi risiko yang mungkin timbul dari kekurangannya dapat diminimalkan atau dimitigasi. Pemaparan rinci mengenai perbandingan kelebihan dan kekurangan dari seluruh alternatif solusi disajikan pada Tabel III.3 berikut.
+
+\setcounter{table}{2}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|}
+		\caption{Kelebihan dan Kekurangan Masing-Masing Alternatif Solusi}\label{tbl:solusi} \\ 
+		\hline
+		\textbf{Solusi} & \textbf{Kelebihan} & \textbf{Kekurangan} \\
+		\hline
+		\endfirsthead
+		
+		\multicolumn{3}{l}{\small \tablename\ \thetable\ --- \textit{Lanjutan}} \\
+		\hline
+		\textbf{Solusi} & \textbf{Kelebihan} & \textbf{Kekurangan} \\
+		\hline
+		\endhead
+		
+		\hline
+		\multicolumn{3}{r}{\textit{(Lanjutan ke halaman berikutnya)}} \\
+		\endfoot
+		
+		\hline
+		\endlastfoot
+		
+		Kombinasi YOLO, CRNN, dan \textit{Post-processing} &
+		\begin{enumerate}
+			\item Setiap bagian bisa diatur atau diganti secara terpisah untuk hasil terbaik
+			\item Sangat baik dalam menentukan lokasi presisi untuk setiap elemen seperti teks, tabel, dan gambar
+		\end{enumerate} &
+		\begin{enumerate}
+			\item Tidak ada sistem yang menyatukan semuanya. Perlu usaha besar untuk membuat deteksi, pengenalan, dan perbaikan tata letak bekerja bersamaan
+			\item Perlu membuat algoritma tambahan dari nol untuk mendeteksi struktur tabel, terutama untuk tabel yang rumit atau tanpa garis
+		\end{enumerate} \\
+		\hline
+		
+		PaddleOCR &
+		\begin{enumerate}
+			\item Menyediakan satu paket terintegrasi untuk deteksi, pengenalan teks, analisis tata letak, dan pembacaan tabel
+			\item Mampu membaca dan mengubah struktur tabel menjadi format digital secara otomatis
+		\end{enumerate} &
+		\begin{enumerate}
+			\item Sulit mengubah perilaku internal bila perlu penyesuaian detail
+			\item Hasil spasi atau pindah baris masih memerlukan perbaikan manual
+		\end{enumerate} \\
+		\hline
+		
+		Kombinasi EasyOCR dan Layout Parser &
+		\begin{enumerate}
+			\item Mampu membedakan dan mengklasifikasikan berbagai elemen dengan akurasi tinggi
+			\item Komponen terpisah memudahkan penambahan logika khusus
+		\end{enumerate} &
+		\begin{enumerate}
+			\item Perlu usaha menggabungkan hasil keduanya
+			\item Tidak langsung mengekstrak struktur tabel kompleks
+		\end{enumerate} \\
+		\hline
+	\end{tabularx}
+\end{center}
+
+
+Analisis kualitatif pada tabel III.3 perlu didukung oleh penilaian kuantitatif yang lebih objektif dan terukur. Untuk memenuhi kebutuhan ini, akan diterapkan metode \textit{Weighted Scoring Model} (WSM). Metode ini menyediakan kerangka kerja yang sistematis untuk menilai dan membandingkan alternatif solusi secara numerik.
+
+Dalam metode WSM, setiap kriteria akan diberikan bobot persentase yang menyatakan prioritas kebutuhan dalam penyelesaian masalah dengan total bobot adalah seratus persen. Pada metode WSM ini sudah ditetapkan tiga kriteria evaluasi utama. Berikut adalah definisi, alasan, dan alokasi bobot untuk setiap kriteria.
+
+\begin{enumerate}
+	\item Efektivitas (bobot 50\%) 
+	\par Kriteria ini menjadi prioritas utama karena mengukur secara langsung kemampuan solusi dalam menyelesaikan akar permasalahan, terutama akurasi ekstraksi dan tata letak dokumen. Sebagai inti dari keberhasilan, kriteria ini diberikan porsi bobot terbesar yaitu lima puluh persen.
+	
+	\item Implementability (bobot 30\%) 
+	\par Kriteria ini meninjau aspek teknis dan ketersediaan sumber daya, seperti estimasi waktu, biaya, dan kompleksitas integrasi. Kriteria ini penting untuk menentukan kelayakan dan kecepatan penyelesaian, sehingga diberikan bobot tiga puluh persen.
+	
+	\item Skalabilitas (Bobot 20\%) 
+	\par Kriteria ini mengukur kemampuan sistem untuk berkembang di masa depan, seperti menangani volume data yang lebih besar atau kebutuhan kustomisasi baru. Ini adalah pertimbangan jangka panjang yang diberi bobot dua puluh persen.
+\end{enumerate}
+
+Penerapan proses penilaian yang telah dijabarkan, yaitu pemberian skor performa pada setiap alternatif dan kalkulasinya terhadap bobot kriteria yang telah ditetapkan, telah selesai dilakukan. Hasil perhitungan kuantitatif menggunakan metode WSM ini disajikan secara rinci pada Tabel III.4.
+
+\setcounter{table}{3}
+\begin{table}[H]
+	\centering
+	\vspace{-10pt}
+	\begin{tabularx}{\textwidth}{|l|X|X|X|}
+		\hline
+		\textbf{Kriteria} & 
+		\textbf{Kombinasi YOLO, CRNN, dan \textit{Post-processing}} & 
+		\textbf{PaddleOCR} & 
+		\textbf{Kombinasi EasyOCR dan Layout Parser} \\ 
+		\hline
+		Efektivitas (50\%) & 5 & 4 & 5 \\ 
+		\hline
+		\textit{Implementability} (30\%) & 1 & 5 & 1 \\ 
+		\hline
+		Skalabilitas (20\%) & 5 & 2 & 5 \\ 
+		\hline
+		\textbf{Total} & 3.8 & 3.9 & 3.8 \\ 
+		\hline
+	\end{tabularx}
+	\caption{Daftar Kebutuhan Nonfungsional Sistem}
+	\label{tbl:WSM_alternatif_solusi}
+\end{table}
+
+
+Pada kriteria efektivitas, kombinasi YOLO, CRNN, dan \textit{Post-processing} dan kombinasi EasyOCR dan Layout Parser sama-sama menerima skor 5. Penilaian ini didasarkan pada fakta bahwa keduanya adalah pendekatan yang bisa disesuaikan sehingga hasilnya bisa dibuat semirip mungkin. kombinasi YOLO, CRNN, dan \textit{Post-processing} sangat unggul dalam presisi koordinat bounding box, sementara kombinasi EasyOCR dan Layout Parser unggul dalam pemahaman struktur dan klasifikasi elemen tata letak, sehingga keduanya dinilai menawarkan tingkat akurasi tertinggi. Di sisi lain, PaddleOCR memperoleh skor 4. Meskipun sangat fungsional dan memiliki kemampuan pengenalan tabel bawaan, akurasi presisi tata letaknya secara umum, seperti penanganan spasi dan perpindahan baris masih kurang.
+
+
+Selanjutnya, pada kriteria \textit{implementability}, perbedaannya menjadi sangat jauh dan menjadi faktor penentu. PaddleOCR menerima skor 5. Alasan utamanya karena PaddleOCR merupakan sebuah solusi terpadu atau \textit{all-in-one}. Sistem ini menyediakan \textit{pipeline} yang sudah terintegrasi penuh, mulai dari deteksi hingga pengenalan tabel, sehingga secara drastis mengurangi waktu dan kompleksitas pengembangan. Sebaliknya, kombinasi YOLO, CRNN, dan \textit{Post-processing} dan kombinasi EasyOCR dan Layout Parser keduanya menerima skor terendah 1. Kedua pendekatan ini mewakili tingkat kompleksitas implementasi yang sangat tinggi, kombinasi YOLO, CRNN, dan \textit{Post-processing} menuntut pembangunan \textit{pipeline} manual dari nol dan kombinasi EasyOCR dan Layout Parser memerlukan usaha integrasi untuk menggabungkan dua sistem terpisah.
+
+
+Terakhir, pada kriteria skalabilitas yang berfokus pada jangka panjang, situasinya kembali berbalik. kombinasi YOLO, CRNN, dan \textit{Post-processing} dan kombinasi EasyOCR dan Layout Parser keduanya menerima skor 5. Keunggulan utama keduanya terletak pada sifatnya yang modular, yang memungkinkan setiap komponen diganti atau disesuaikan secara independen di masa depan. Di sisi lain, PaddleOCR menerima skor rendah 2. Sifatnya yang sudah terintegrasi erat justru menjadi kelemahan di sini, membuatnya kaku dan sulit untuk dikustomisasi, yang berpotensi menjadi hambatan jika diperlukan modifikasi spesifik di kemudian hari.
+
+
+Berdasarkan analisis kualitatif kelebihan dan kekurangan pada Tabel III.3, serta didukung oleh hasil perhitungan kuantitatif metode WSM pada Tabel III.4, maka PaddleOCR ditetapkan sebagai solusi terpilih. PaddleOCR unggul secara signifikan karena menawarkan keseimbangan terbaik antara fungsionalitas dan kelayakan implementasi. Kelebihannya sebagai solusi \textit{all-in-one} yang siap pakai, lengkap dengan kemampuan pengenalan tabel bawaan, memberikan nilai tertinggi pada kriteria \textit{implementability}. Hal ini menjadikannya pilihan yang paling optimal untuk dikembangkan dibandingkan alternatif solusi lainnya yang membutuhkan usaha integrasi dan pengembangan manual yang jauh lebih kompleks.

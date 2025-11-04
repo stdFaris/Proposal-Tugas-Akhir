@@ -1,0 +1,66 @@
+% ==========================================
+% BAB I PENDAHULUAN
+% ==========================================
+\chapter{PENDAHULUAN}
+\label{chap:pendahuluan}
+% --- Latar Belakang ---
+\section{Latar Belakang}
+Menurut \textcite{rihanna2024digitization}, keberadaan arsip digital mempermudah peneliti dan masyarakat dalam mengakses informasi sesuai dengan kebutuhan mereka dari mana saja. Kondisi ini menunjukkan pentingnya proses pengubahan dokumen fisik menjadi dokumen digital yang dapat disunting dan dicari, terutama untuk meningkatkan efisiensi pengelolaan arsip serta memudahkan distribusi informasi. Namun, proses konversi tersebut masih menghadapi berbagai tantangan, terutama pada dokumen yang memiliki struktur kompleks, seperti dokumen dengan elemen tabel, gambar, atau tulisan tangan. Teknologi \textit{Optical Character Recognition} (OCR) memang mampu mengenali teks pada dokumen fisik, tetapi sering kali gagal mempertahankan tata letak aslinya \autocite{tripathi2025ocr}, sehingga dokumen digital yang dihasilkan menjadi tidak terstruktur dengan baik dan berbeda dari tampilan dokumen fisiknya.
+
+
+Untuk mengatasi keterbatasan tersebut, diperlukan pendekatan OCR yang tidak hanya mampu mengenali karakter, tetapi juga memahami tata letak dokumen secara keseluruhan. Menurut \textcite{wang2023graphical}, \textit{Document Layout Analysis} (DLA) atau analisis tata letak dokumen merupakan proses mendeteksi berbagai komponen semantik dalam suatu dokumen dan mengklasifikasikannya ke dalam kategori seperti teks, judul, tabel, atau gambar. Dengan menerapkan DLA, sistem dapat memahami hubungan antar elemen dokumen, sehingga hasil digitalisasi menjadi lebih akurat dan tetap menyerupai format aslinya.
+
+Berbagai penelitian telah berupaya meningkatkan akurasi DLA melalui pendekatan \textit{deep learning}. Model berbasis \textit{Convolutional Neural Network} (CNN) seperti Faster R-CNN dan Mask R-CNN menunjukkan kinerja yang baik dalam mendeteksi elemen tata letak, terutama saat dilatih menggunakan dataset berskala besar seperti PubLayNet \autocite{zhong2019publaynet}. Seiring dengan kemajuan teknologi, pendekatan berbasis \textit{Transformer} mulai digunakan untuk memahami konteks dokumen secara lebih menyeluruh. Model seperti LayoutLM \autocite{LayoutLM} dan DiT \autocite{DiT} mampu menggabungkan representasi visual dan tekstual secara terpadu, sehingga meningkatkan kemampuan sistem dalam menganalisis dokumen yang kompleks.
+
+Berdasarkan kondisi tersebut, penelitian ini berfokus pada pengembangan sistem yang mengintegrasikan kemampuan OCR dengan analisis tata letak dokumen berbasis \textit{deep learning}. Sistem yang diusulkan bertujuan menghasilkan dokumen digital yang rapi, terstruktur, dan dapat disunting dari sumber dokumen fisik. Penelitian ini diharapkan dapat memberikan kontribusi terhadap peningkatan akurasi proses konversi dokumen, terutama dalam mempertahankan tata letak aslinya.
+
+% --- Rumusan Masalah ---
+\section{Rumusan Masalah}
+Berdasarkan identifikasi yang telah dilakukan, berikut adalah rumusan masalah yang akan menjadi fokus dalam tugas akhir ini.
+\begin{enumerate}
+\item Bagaimana menerapkan OCR untuk mengekstraksi teks, tabel, dan gambar dari dokumen fisik?
+\item Bagaimana merancang sistem OCR yang mampu mempertahankan tata letak asli dokumen fisik sehingga dokumen digital hasil OCR memiliki struktur yang rapi dan dapat disunting?
+\end{enumerate}
+
+
+% --- Tujuan ---
+\section{Tujuan}
+Berdasarkan rumusan masalah yang ada, tujuan dari tugas akhir ini adalah mengembangkan sistem OCR yang mampu menghasilkan dokumen digital dari dokumen tercetak maupun tulisan tangan dengan tetap mempertahankan tata letak asli dokumennya. Sistem ini tidak hanya mengenali teks, tetapi juga mampu mendeteksi elemen seperti tabel dan gambar serta menempatkannya kembali dalam posisi yang sesuai dengan tata letak pada dokumen sumber, sehingga menghasilkan dokumen digital yang terstruktur, rapi, dan dapat disunting.
+
+
+% --- Batasan Masalah ---
+\section{Batasan Masalah}
+Berikut disajikan batasan masalah yang digunakan untuk memperjelas ruang lingkup pembahasan dalam tugas akhir ini.
+\begin{enumerate}
+\item Jenis dokumen yang diproses terbatas pada dokumen fisik berbahasa Indonesia.
+\item Elemen dokumen yang dikenali dan direkonstruksi meliputi teks, tabel, dan gambar.
+\item Sistem dirancang untuk memproses dokumen yang memiliki struktur tata letak satu kolom, yaitu dokumen dengan alur baca berurutan dari atas ke bawah tanpa pembagian kolom.
+\item Pengaturan \textit{font} pada hasil dokumen digital tidak meniru \textit{font} asli dokumen sumber.
+\item Sistem tidak dirancang untuk mengenali atau memproses dokumen yang mengalami kerusakan berat, memiliki orientasi terputar, dan tercoret.
+\item Keluaran sistem berupa dokumen digital yang memiliki latar belakang putih polos, tanpa membawa latar belakang asli dari dokumen sumber.
+\end{enumerate} 
+
+
+% --- Metodologi Pengerjaan TA ---
+\section{Metodologi}
+Metodologi penelitian dalam tugas akhir ini mencakup lima tahapan utama, yakni eksplorasi, perancangan, implementasi, pengujian, dan evaluasi. Alur penelitian ini pada dasarnya berjalan secara berurutan. Namun, untuk memastikan hasil yang optimal, diterapkan mekanisme iteratif. Apabila hasil pada tahap pengujian belum memuaskan, proses dapat diulang kembali. Iterasi ini umumnya dilakukan mulai dari tahap perancangan dan implementasi, namun tidak menutup kemungkinan pengulangan kembali ke tahap eksplorasi jika metode atau teknologi yang dipilih terbukti tidak memadai.
+\begin{enumerate}
+	\item Eksplorasi OCR dan metode analisis tata letak dokumen
+	\par Tahap pertama yang dilakukan adalah eksplorasi, yang berfokus pada pemilihan teknologi OCR dan metode analisis tata letak dokumen. Pada tahap ini dilakukan studi mendalam terhadap berbagai teknologi OCR yang tersedia, dengan tujuan untuk menentukan solusi terbaik dalam mengubah dokumen fisik menjadi dokumen digital secara akurat. Selain menilai kemampuan OCR dalam mengenali teks, tahap eksplorasi juga mencakup analisis terhadap cara setiap OCR menangani berbagai elemen dokumen, seperti tabel dan gambar. Di samping itu, dipelajari pula metode yang dapat digunakan untuk mendeteksi dan memetakan posisi elemen-elemen tersebut sehingga dokumen digital yang dihasilkan tidak mampu mempertahankan tata letak aslinya.
+	
+	
+	\item Perancangan
+	\par Setelah teknologi OCR dan metode analisis tata letak dokumen ditentukan, dilakukan tahap perancangan arsitektur sistem. Pada tahap ini, dirancang mekanisme utama yang berfungsi untuk mengintegrasikan hasil ekstraksi dari OCR dengan informasi posisi setiap elemen pada dokumen fisik. Tujuannya adalah agar sistem mampu merekonstruksi dokumen digital yang tidak hanya menyalin isi dokumen sumber, tetapi juga mempertahankan tata letak aslinya.
+	
+	
+	\item Implementasi
+	\par Setelah tahap perancangan selesai dilakukan, proses dilanjutkan ke tahap implementasi yang merupakan bagian inti dari penelitian ini. Pada tahap ini, rancangan mekanisme rekonstruksi dokumen yang telah disusun sebelumnya mulai diterapkan dalam bentuk pengembangan sistem secara nyata. Implementasi dilakukan dengan menulis kode program yang berfungsi untuk memproses dokumen fisik, menerapkan teknologi OCR untuk mengekstraksi elemen dokumen, serta mengintegrasikannya dengan hasil analisis tata letak agar struktur halaman tetap terjaga.
+	
+	
+	\item Pengujian
+	\par Setelah tahap implementasi selesai dilakukan, proses penelitian dilanjutkan dengan tahap pengujian. Pada tahap ini, dilakukan serangkaian uji coba untuk menilai kinerja sistem dalam mempertahankan tata letak dokumen. Pengujian dilakukan dengan membandingkan hasil yang hanya menggunakan OCR dengan hasil dokumen yang telah melalui mekanisme penyusunan ulang tata letak. Melalui perbandingan ini, dapat dinilai kemampuan sistem untuk menghasilkan dokumen digital yang rapi dan menyerupai bentuk aslinya. Apabila hasil yang diperoleh belum memuaskan, maka tahap eksplorasi, perancangan, implementasi, dan pengujian dapat diulang secara iteratif hingga sistem memberikan hasil yang optimal.
+	
+	
+	\item Evaluasi
+	\par Tahap terakhir dalam penelitian ini adalah evaluasi. Pada tahap ini dilakukan analisis terhadap hasil pengujian untuk menilai efektivitas sistem dalam mencapai tujuan penelitian. Evaluasi mencakup peninjauan terhadap keterbacaan hasil dan kesesuaian dengan tata letak dokumen fisik. Berdasarkan hasil evaluasi tersebut, disusun kesimpulan yang bersifat ringkas dan jelas guna menjawab rumusan masalah serta memberikan gambaran mengenai kemampuan sistem OCR yang dikembangkan dalam mempertahankan tata letak dokumen dengan baik.
+\end{enumerate}

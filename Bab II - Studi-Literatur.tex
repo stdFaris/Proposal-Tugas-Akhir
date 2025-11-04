@@ -1,0 +1,206 @@
+% ==========================================
+% BAB II STUDI LITERATUR
+% ==========================================
+\chapter{STUDI LITERATUR}
+\label{chap:studi-literatur}
+
+\section{Digitalisasi Dokumen}
+Digitalisasi dokumen didefinisikan sebagai proses pengubahan data dari format analog (seperti dokumen fisik) menjadi format digital yang dapat dibaca dan diproses oleh komputer. Proses ini sangat penting dalam transformasi digital karena melibatkan pengkodean potongan data menjadi format digital, yang memungkinkan transmisi, penggunaan kembali, dan pemrosesan informasi secara efisien \autocite{TanFromDigitizationDigitalization}. Dalam konteks dokumen, digitalisasi berfokus pada pengelolaan sejumlah besar informasi yang umumnya tidak terstruktur, seperti hasil pindai, PDF, dan berkas digital asli yang belum dapat dibaca atau diproses langsung oleh komputer \autocite{sinha2025digitizationdocumentinformationextraction}.
+
+
+Salah satu teknologi kunci dalam proses digitalisasi dokumen adalah \textit{Optical Character Recognition} (OCR). OCR adalah ilmu yang memungkinkan terjemahan berbagai jenis dokumen atau gambar menjadi data yang dapat dianalisis, diedit, dan dicari \autocite{MemonOCRSLR}. Dalam beberapa dekade terakhir, peneliti telah memanfaatkan alat kecerdasan buatan (\textit{artificial intelligence}) dan pembelajaran mesin (\textit{machine learning}) untuk menganalisis dokumen tulisan tangan dan cetak secara otomatis, mengubahnya menjadi format elektronik yang dapat digunakan \autocite{MemonOCRSLR}.
+
+
+Digitalisasi dokumen, yang didukung oleh implementasi teknologi modern, menawarkan berbagai manfaat penting. Manfaat-manfaat tersebut akan diuraikan sebagai berikut:
+
+\begin{enumerate}
+	\item Aksesibilitas dan efisiensi pencarian
+	\par Dokumen yang telah didigitasi dan diproses dengan teknologi seperti OCR diubah menjadi data yang dapat dicari. Hal ini secara signifikan memudahkan pengambilan informasi yang dibutuhkan, menghilangkan kebutuhan untuk mencari di tumpukan dokumen fisik \autocite{sinha2025digitizationdocumentinformationextraction}.
+	
+	\item Preservasi dan perlindungan
+	\par Digitalisasi memainkan peran penting dalam pelestarian data, terutama untuk data historis dan arsip. Dengan mengalihmediakan dokumen fisik menjadi format digital, hal ini membantu melestarikan informasi dari kerusakan akibat seringnya penggunaan, atau faktor lingkungan (seperti kelembaban dan suhu) maupun faktor biologis (seperti hama perusak) \autocite{rihanna2024digitization}
+	
+	\item Skalabilitas dan otomatisasi proses data
+	\par Pengumpulan data secara tradisional, misalnya melalui transkripsi manual, sangat terbatas. Metode ini tidak efisien untuk menangani data berskala besar, memakan biaya, dan prosesnya rumit. Oleh karena itu, \textit{Machine Learning} (ML) modern kini digunakan untuk mengotomatisasi digitalisasi. Solusi ML terbukti lebih cepat, mudah diskalakan untuk jutaan dokumen, dan hasilnya dapat diandalkan secara konsisten. \autocite{dahl2021applicationsmachinelearningdocument}
+	
+	\item Peningkatan kualitas analisis data dan penelitian
+	\par Ketersediaan data hasil digitalisasi sangat menentukan mutu penelitian. Dengan kumpulan data yang lebih besar dan rinci, peneliti dapat menarik kesimpulan yang lebih tajam. Hal ini memungkinkan mereka menjawab pertanyaan penelitian yang kompleks secara lebih meyakinkan \autocite{dahl2021applicationsmachinelearningdocument}. Selain itu, teks yang diekstrak dari dokumen digital dapat dianalisis oleh \textit{Large Language Model} (LLM) untuk mengidentifikasi pasangan kunci-nilai dan mengatasi ambiguitas, sehingga mampu menyajikan data secara terstruktur berdasarkan konteks informasinya \autocite{sinha2025digitizationdocumentinformationextraction}.
+\end{enumerate}
+
+
+\section{\textit{Optical Character Recognition} (OCR)}
+Menurut \textcite{islam2017surveyopticalcharacterrecognition}, OCR adalah perangkat lunak yang mengubah teks dan gambar tercetak menjadi bentuk digital sehingga dapat digunakan oleh mesin. \textcite{Borovikov2014ASO} menyatakan bahwa OCR adalah proses mengubah gambar yang dipindai dari teks tercetak atau tulisan tangan (angka, huruf, dan simbol) menjadi teks yang dapat dibaca mesin, baik dalam bentuk berkas teks biasa maupun format HTML.
+
+\subsection{SEJARAH PERKEMBANGAN OCR}
+Teknologi OCR telah berevolusi secara signifikan. Perjalanannya dimulai dari sistem mekanis sederhana di era awal, yang kini telah bertransformasi menjadi sistem canggih berbasis \textit{deep learning}. Berikut adalah linimasa sejarah perkembangan OCR menurut \textcite{tripathi2025sejarahocr}.
+\begin{enumerate}
+	\item Konsep awal (1920-an)
+	\par Era 1920-an menjadi fondasi awal OCR, dimulai oleh Emanuel Goldberg yang menciptakan sistem temu balik dokumen elektronik pertama di dunia, dikenal sebagai Mesin Statistik. Sistem ini menggunakan sel fotolistrik dan proyektor film untuk mengatasi kesulitan menemukan catatan keuangan pada mikrofilm, serta mampu menyortir surat dan membaca cek bank berdasarkan pola visual. Prinsip detektor fotoelektrik Goldberg inilah yang kemudian diadaptasi pada tahun 1929 oleh Gustav Tauschek, seorang penemu otodidak asal Austria, yang mengembangkan Mesin Pembaca Analog. Mesin Tauschek bekerja dengan cara memindai gambar berteks melalui sebuah jendela, kemudian menggunakan cakram berputar berisi potongan huruf dan angka untuk mencocokkan karakter. Setelah karakter dikenali, mesin akan secara otomatis mengaktifkan drum pencetak untuk mencetak teks hasil pengenalan karakter tersebut.
+	
+	\item Mesin OCR pertama (1950-an)
+	\par Era 1950-an, yang didorong oleh pertumbuhan data sangat pesat, menandai lahirnya kebutuhan akan teknologi pemrosesan data yang lebih efisien. Menjawab tantangan ini, David Shepard dan Harvey Cook Jr. menciptakan alat bernama GISMO, yang kemudian dipatenkan dengan nama Analyzing Reader. Alat ini merevolusi teknik pengambilan data otomatis berkat kemampuannya mengubah teks tercetak menjadi bahasa atau kode mesin. Untuk mengkomersialkan penemuan tersebut, Shepard bersama Cook dan William Lawless Jr. mendirikan Intelligent Machines Research Co. (IMR) pada tahun 1952. Mesin hasil pengembangan mereka segera diadopsi oleh berbagai perusahaan besar, seperti Reader’s Digest, National City Bank, dan beberapa perusahaan minyak utama. Puncaknya terjadi pada tahun 1959 setelah memperoleh lisensi paten dari IMR, IBM memperkenalkan sistem baru untuk menangkap data dari dokumen. IBM menamai sistem inilah yang kini dikenal sebagai \textit{Optical Character Recognition} (OCR), dan istilah tersebut kemudian dengan cepat menjadi standar industri.
+	
+	\item Kemajuan pengenalan pola (1960-an hingga 1970-an)
+	\par Pada 1960–an, perkembangan OCR mengalami kemajuan pesat. Penelitian di MIT berfokus pada peningkatan perangkat lunak serta penyederhanaan proses pengambilan dan penyimpanan data. Peneliti di MIT mengembangkan algoritma yang mampu menganalisis data dan menyesuaikan diri dengan berbagai format dokumen. Pengembangan inilah yang kemudian menjadi dasar bagi lahirnya \textit{machine learning} dalam OCR. Pada periode yang sama, muncul Teknik Transformasi Hough (\textit{Hough Transform}) yang memungkinkan mesin OCR mengenali tidak hanya huruf, tetapi juga bentuk geometris. Dua teknologi penting kemudian lahir sebagai spesialisasi yaitu \textit{Intelligent Character Recognition} (ICR) untuk mengenali tulisan tangan, dan \textit{Magnetic Ink Character Recognition} (MICR) untuk memproses cek secara otomatis di industri perbankan. Kehadiran ICR dan MICR ini menandai kemampuan OCR untuk beradaptasi dan memperluas penerapannya di berbagai bidang.
+	
+	\item Kemajuan OCR digital (1980-an hingga 1990-an)
+	\par Era 1980–1990 menandai pergeseran fundamental dalam OCR, fokus pengembangan beralih secara masif dari perangkat keras ke perangkat lunak. Pergeseran ini dipicu oleh adopsi teknologi pencitraan digital yang membuka potensi besar untuk otomatisasi data dalam skala yang lebih luas. Berkat fokus pada perangkat lunak, lahirlah algoritma yang jauh lebih canggih. Sistem OCR kini mampu mengenali berbagai jenis \textit{font} dan memahami tata letak dokumen yang kompleks. Kemampuan ini secara langsung mempercepat proses entri data otomatis sekaligus meningkatkan akurasi pengenalan tulisan tangan. Selain itu, \textit{Document Layout Analysis} (DLA) memungkinkan ekstraksi data yang lebih akurat dari elemen seperti tabel dan grafik, serta dukungan multibahasa yang mulai berkembang untuk memenuhi kebutuhan perusahaan global, menjadikan OCR solusi yang jauh lebih praktis dan dapat diterapkan secara luas.
+	
+	\item Perangkat lunak OCR komersial (1990-an)
+	\par Era 1990-an menjadi titik komersialisasi OCR secara massal. Perangkat lunak dari perusahaan seperti ABBYY, Adobe, dan Nuance mulai mendominasi pasar, memudahkan pengguna mengonversi dokumen cetak menjadi teks yang dapat diedit. Kemampuan ini secara langsung meningkatkan efisiensi bisnis dan mendorong era digitalisasi arsip berskala besar.
+	
+	\item Tesseract OCR (2005)
+	\par Tahun 2005 menjadi titik penting ketika Tesseract OCR dihidupkan kembali oleh Google sebagai proyek \textit{open-source}. Dengan memanfaatkan \textit{machine learning} (ML) dan \textit{computer vision} (CV), Tesseract mampu meningkatkan akurasi ekstraksi teksnya secara signifikan, hingga mencapai lebih dari 70\%. Selain itu, statusnya sebagai proyek \textit{open-source} untuk pertama kalinya memungkinkan kolaborasi dan kontribusi dari komunitas pengembang global.
+	
+	\item Revolusi \textit{deep learning} (2010-an hingga Sekarang)
+	\par Memasuki 2010-an, revolusi \textit{deep learning} meningkatkan akurasi OCR hingga mendekati 99\%. Kemajuan ini didorong oleh dua arsitektur utama: \textit{Convolutional Neural Networks} (CNN) yang unggul dalam ekstraksi fitur gambar dan pengenalan \textit{font} kompleks, serta \textit{Recurrent Neural Networks} (RNN) yang berperan besar dalam meningkatkan pemahaman konteks dan akurasi pengenalan tulisan tangan. Kombinasi kedua teknologi inilah yang mengubah OCR secara fundamental, yang hasilnya membuat interpretasi teks tulisan tangan menjadi jauh lebih akurat dan sistem mampu menangani struktur dokumen yang kompleks dengan lebih baik.
+\end{enumerate}
+
+\subsection{Jenis-Jenis Sistem OCR}
+
+\begin{figure}[H]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.7\textwidth]{image/typesOCR.png}
+	\caption{Tipe-Tipe OCR \autocite{islam2017surveyopticalcharacterrecognition}}
+	\label{gambar:Tipe OCR}
+\end{figure}
+
+Pengkategorian paling mendasar dari sistem OCR didasarkan pada jenis input yang diproses \autocite{islam2017surveyopticalcharacterrecognition}. Berdasarkan hal ini, OCR dibagi menjadi dua jenis utama.
+
+\begin{enumerate}
+	\item \textit{Printed text recognition}
+	\par Sistem yang dirancang untuk mengenali karakter yang dicetak oleh mesin, yang umumnya memiliki dimensi seragam.
+	
+	\item \textit{Handwriting recognition}
+	\par Sistem yang mengenali tulisan tangan manusia. Jenis ini dianggap sebagai tugas yang jauh lebih sulit karena tingginya perbedaan gaya penulisan antar individu, atau bahkan oleh individu yang sama.
+\end{enumerate}
+
+
+Lebih lanjut, \textcite{islam2017surveyopticalcharacterrecognition} membagi pengenalan tulisan tangan menjadi dua subkategori berdasarkan mode perolehan data.
+
+\begin{enumerate}
+	\item \textit{Online recognition}
+	\par Dilakukan secara \textit{real-time} saat pengguna menulis. Sistem ini dapat menangkap informasi temporal seperti kecepatan, arah goresan, dan jumlah goresan, sehingga membuatnya lebih mudah dikembangkan.
+	
+	\item \textit{Offline recognition}
+	\par Bekerja pada data statis, yaitu gambar \textit{bitmap} dari tulisan yang sudah ada. Ini adalah masalah yang jauh lebih sulit karena tidak ada informasi temporal yang tersedia untuk membantu proses pengenalan.
+\end{enumerate}
+
+
+Sementara itu, \textcite{Borovikov2014ASO} mengklasifikasikan sistem OCR komersial berdasarkan ruang lingkup dan tujuannya.
+\begin{enumerate}
+	\item \textit{Task specific readers}
+	\par Sistem ini dirancang untuk menangani tipe dokumen yang sangat spesifik dengan layout yang sudah ditentukan, seperti formulir standar, cek bank, atau slip kartu kredit. Fokus utama sistem ini adalah kecepatan pemrosesan yang sangat tinggi dan tingkat kesalahan yang sangat rendah.
+	
+	\item \textit{General purpose page readers}
+	\par Sistem ini dirancang untuk menangani rentang dokumen yang lebih luas dan beragam, seperti surat bisnis, karya ilmiah, dan surat kabar.
+\end{enumerate}
+
+
+\subsection{Tahapan Utama dalam Proses OCR}
+Proses OCR dilakukan melalui beberapa fase utama. Berikut merupakan fase-fase utama pada OCR menurut \textcite{islam2017surveyopticalcharacterrecognition}.
+
+\begin{enumerate}
+	\item \textit{Image acquisition}
+	\par Tahap awal dalam OCR adalah memperoleh gambar digital dari sumber eksternal (seperti scanner atau kamera). Gambar ini kemudian diubah ke format yang dapat diproses komputer, melibatkan kuantisasi dan binarisasi untuk menyederhanakan intensitas piksel. Gambar juga dapat dikompresi untuk mengurangi ukuran berkas.
+	
+	\item \textit{Preprocessing}
+	\par  Langkah ini bertujuan meningkatkan kualitas visual gambar untuk pemrosesan lebih lanjut. Kegiatan utamanya meliputi penghilangan \textit{noise}, memisahkan teks dan latar belakang (\textit{thresholding}), koreksi kemiringan (\textit{deskew}), dan operasi morfologi (erosi, dilasi). Proses \textit{thinning} dan ekstraksi garis dasar (\textit{baseline}) juga diterapkan untuk mempermudah pemrosesan karakter.
+	
+	\item \textit{Character segmentation}
+	\par Fase ini berfungsi untuk memisahkan teks menjadi satuan karakter individual agar dapat dikenali. Proses segmentasi dapat dilakukan secara eksplisit maupun implisit dengan menggunakan teknik, seperti analisis komponen terhubung atau profil proyeksi. Ketepatan segmentasi sangat penting karena berpengaruh langsung terhadap keberhasilan tahap klasifikasi berikutnya.
+	
+	
+	\item \textit{Feature extraction}
+	\par Setelah karakter dipisahkan, tahap ini bertujuan mengekstraksi fitur-fitur unik yang membedakan satu karakter dari karakter lainnya. Fitur dapat bersifat geometris (seperti \textit{loop} atau \textit{stroke}) maupun statistik (seperti \textit{moments}). Pemilihan fitur yang tepat sangat penting untuk meminimalkan variasi antarkarakter sejenis. Untuk meningkatkan efisiensi, teknik seperti \textit{Principal Component Analysis} (PCA) dapat digunakan.
+	
+	
+	\item \textit{Character classification}
+	\par Fase ini merupakan tahap pengenalan, yaitu proses ketika fitur karakter dipetakan ke dalam kelas atau kategori tertentu (misalnya huruf 'A', 'B', dan seterusnya). Metode klasifikasi dapat bersifat struktural, yang didasarkan pada hubungan antar komponen, atau bersifat statistik, yang menggunakan pendekatan seperti Bayesian dan jaringan saraf (\textit{neural network}). Keberhasilan proses klasifikasi sangat bergantung pada kualitas segmentasi serta fitur yang diekstraksi pada tahap-tahap sebelumnya.
+	
+	
+	\item Post Processing
+	\par Tahap terakhir ini bertujuan untuk meningkatkan akurasi hasil OCR setelah proses klasifikasi. Perbaikan dilakukan dengan menggunakan kombinasi \textit{classifier} secara paralel maupun berurutan. Selain itu, diterapkan analisis konteks secara geometris, linguistik, maupun dokumen, serta pemanfaatan kamus, \textit{spell checker}, dan model probabilistik (seperti \textit{Markov} atau \textit{n-grams}) untuk memperbaiki kesalahan transkripsi, sehingga menghasilkan keluaran yang lebih akurat dan konsisten.
+\end{enumerate}
+
+
+\section{\textit{Document Layout Analysis} (DLA)}
+\textit{Document Layout Analysis} (DLA) merupakan langkah awal yang krusial dalam sistem pemahaman dokumen \autocite{BinmakhashenDLA}. Tugas utama DLA adalah mendeteksi dan melakukan anotasi terhadap struktur fisik dokumen \autocite{BinmakhashenDLA}. Secara lebih spesifik, DLA melibatkan pemahaman terhadap pengaturan elemen-elemen di dalam suatu dokumen \autocite{shehzadi2024hybridapproachdocumentlayout}.
+
+
+Tujuan utama dari DLA adalah mempermudah proses analisis atau pengenalan pada tahap berikutnya dengan cara mengidentifikasi blok-blok dokumen yang memiliki keseragaman serta menentukan hubungan antarbok tersebut \autocite{BinmakhashenDLA}. Dengan kata lain, DLA berperan sebagai komponen kunci dalam \textit{document intelligence} karena kemampuannya mengubah dokumen yang tidak terstruktur menjadi format yang terstruktur. Hal ini sangat penting untuk mendukung proses identifikasi dan ekstraksi data dari dokumen \autocite{shehzadi2024hybridapproachdocumentlayout}.
+
+\begin{figure}[H]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.7\textwidth]{image/exampleDLA.jpg}
+	\caption{Contoh Hasil DLA}
+	\label{gambar:Contoh Hasil DLA}
+\end{figure}
+
+
+Menurut \textcite{shehzadi2024hybridapproachdocumentlayout}, DLA dibagi menjadi dua aspek utama.
+\begin{enumerate}
+	\item \textit{Physical layout analysis}
+	\par Tahap ini berfokus pada identifikasi dan pengelompokan elemen-elemen fisik halaman secara spasial, seperti teks, gambar, dan tabel.
+	
+	\item \textit{Logical layout analysis}
+	\par Tahap ini memberikan makna semantik pada elemen-elemen tersebut, misalnya judul, paragraf, dan \textit{header}, serta memahami hubungan hierarki dan urutan pembacaannya.
+\end{enumerate}
+
+
+\begin{figure}[H]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[width=0.9\textwidth]{image/frameworkDLA.png}
+	\caption{Kerangka Kerja DLA secara Umum \autocite{BinmakhashenDLA}}
+	\label{gambar:Kerangka Kerja secara Umum}
+\end{figure}
+
+\par Mengingat tingginya keragaman tata letak dokumen, hingga kini belum ada algoritma DLA universal yang mampu mencakup semua jenis tata letak atau memenuhi seluruh tujuan analisis \autocite{BinmakhashenDLA}. Oleh karena itu, \textcite{BinmakhashenDLA} mengemukakan suatu kerangka kerja DLA yang bersifat umum, logis, dan sistematis. Kerangka kerja tersebut berfungsi sebagai alur dalam proses analisis tata letak dokumen dan terdiri atas lima fase utama.
+
+
+\begin{enumerate}
+	\item \textit{Preprocessing}
+	\par Fase \textit{preprocessing} bertujuan mengubah \textit{raw document image} menjadi gambar yang siap diproses oleh metode DLA. Langkah ini memastikan bahwa gambar masukan memenuhi prasyarat analisis, seperti telah dibersihkan, dibinerisasi, dan dikoreksi dari kemiringan (\textit{de-skewed}). Kerusakan pada dokumen dapat berasal dari degradasi alami, seperti tinta yang menyebar atau tulisan yang memudar, maupun degradasi tambahan, seperti kerusakan alat pemindai atau kemiringan saat pemindaian. Oleh karena itu, efek negatif dari masalah tersebut perlu diminimalkan sebelum proses analisis tata letak dimulai.
+	
+	\item \textit{Analysis parameter estimation}
+	\par Parameter analisis merupakan pengukuran yang telah ditentukan sebelumnya dan digunakan untuk membantu metode DLA mengontrol proses analisis dokumen. Parameter ini dibagi menjadi dua jenis utama:
+	\begin{enumerate}
+		\item \textit{Model-driven parameters}
+		\par Parameter yang diestimasi untuk menyesuaikan model DLA agar memenuhi tujuan analisisnya.
+		\par Contoh: jumlah node atau lapisan pada \textit{Multi-layer Perceptron} (MLP), serta penentuan \textit{initial weights} untuk pelatihan model.
+		
+		\item \textit{Data-driven parameters}
+		\par Parameter yang dihitung menggunakan berbagai pengukuran berdasarkan kumpulan data yang diberikan.
+		\par Contoh: rata-rata jarak antarbaris, jarak antarkata, dan rata-rata tinggi atau lebar karakter.
+	\end{enumerate}
+	
+	\item \textit{Layout analysis}
+	\par Inti dari kerangka kerja DLA terletak pada fase ini, yaitu proses segmentasi halaman. Terdapat tiga strategi utama dalam analisis tata letak:
+	
+	\begin{enumerate}
+		\item \textit{Bottom-Up}
+		\par Pendekatan ini memulai analisis dari bagian terkecil dalam dokumen, seperti piksel atau kelompok kecil elemen yang saling terhubung. Bagian-bagian yang mirip kemudian digabung menjadi area yang lebih besar sampai terbentuk zona dokumen yang utuh. Strategi ini merupakan cara yang paling umum digunakan dalam DLA.
+		
+		\item \textit{Top-Down}
+		\par Analisis dimulai dari wilayah besar (misalnya, tingkat dokumen), kemudian wilayah tersebut dipecah menjadi zona yang lebih kecil (seperti kolom teks) berdasarkan aturan homogenitas. Proses berhenti ketika tidak ada lagi pemisahan zona yang dapat dilakukan.
+		
+		\item \textit{Hybrid}
+		\par Mengintegrasikan kedua strategi sebelumnya (\textit{bottom-up} dan \textit{top-down}). Walaupun jarang digunakan, pendekatan ini dinilai lebih tangguh dan mampu menangani tata letak dokumen yang kompleks.
+	\end{enumerate}
+	
+	\item \textit{Post-processing}
+	\par Fase \textit{post-processing} merupakan langkah opsional dalam sebagian besar algoritma DLA. Tujuannya adalah untuk meningkatkan dan menggeneralisasi hasil algoritma agar dapat diterapkan pada jenis tata letak lain, sekaligus mengompensasi kekurangan hasil segmentasi agar lebih akurat.
+	
+	\item \textit{Performance evaluation}
+	\par Evaluasi kinerja DLA mencakup dua tugas utama.
+	\begin{enumerate}
+		\item \textit{Physical analysis}
+		\par Bertujuan mendeteksi struktur dokumen dan mengidentifikasi batas wilayah sejenis. Evaluasi dilakukan melalui pencocokan antara hasil segmentasi dan \textit{ground-truth} pada tingkat piksel atau wilayah.
+		
+		\item Logical Analysis
+		\par Bertugas memberi label pada wilayah hasil deteksi (seperti gambar, tabel, dan paragraf).
+	\end{enumerate}
+\end{enumerate}
